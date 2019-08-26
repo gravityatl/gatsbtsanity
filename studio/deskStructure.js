@@ -2,21 +2,12 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
 
-const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings']
+const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings', 'menuItem']
 
 export default () =>
   S.list()
     .title('Content')
     .items([
-      S.listItem()
-        .title('Site Settings')
-        .child(
-          S.editor()
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        )
-        .icon(MdSettings),
       S.listItem()
         .title('Company Info')
         .child(
@@ -64,6 +55,32 @@ export default () =>
         .title('People')
         .schemaType('person')
         .child(S.documentTypeList('person').title('People')),
+      S.listItem()
+        .title('Menu Items')
+        .schemaType('menuItem')
+        .child(
+          S.documentList()
+            .title('Categories')
+            .menuItems(S.documentTypeList('category').getMenuItems())
+            .filter('_type == $type && !defined(parents)')
+            .params({ type: 'category' })
+            .child(categoryId =>
+              S.documentList()
+                  .title('Menu Items')
+                  .menuItems(S.documentTypeList('menuItem').getMenuItems())
+                  .filter('_type == $type && $categoryId in categories[]._ref')
+                  .params({ type: 'menuItem', categoryId })
+              )
+            ),
+      S.listItem()
+      .title('Site Settings')
+      .child(
+        S.editor()
+          .id('siteSettings')
+          .schemaType('siteSettings')
+          .documentId('siteSettings')
+      )
+      .icon(MdSettings),
       S.listItem()
         .title('Categories')
         .schemaType('category')

@@ -1,10 +1,10 @@
-import { FaHamsa } from 'react-icons/fa'
+import { IoIosRestaurant } from 'react-icons/io'
 
 export default {
   name: 'menuItem',
   title: 'Menu Item',
   type: 'document',
-  icon: FaHamsa,
+  icon: IoIosRestaurant,
   liveEdit: false,
   fields: [
     {
@@ -23,9 +23,44 @@ export default {
       }
     },
     {
+      name: 'itemNumber',
+      titile: 'Item Number',
+      type: 'string'
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'mainImage'
+    },
+    {
+      name: 'prices',
+      title: 'Prices',
+      type: 'array',
+      of: [
+        {
+          name: 'price',
+          title: 'Price',
+          type: 'object',
+          fields: [
+            {
+              name: 'priceLabel',
+              title: 'Label',
+              type: 'string'
+            },
+            {
+              name: 'thePrice',
+              label: 'Price',
+              type: 'number'
+            }
+          ],
+          preview: {
+            select: {
+              title: 'thePrice',
+              subtitle: 'priceLabel'
+            }
+          }
+        }
+      ],
     },
     {
       name: 'categories',
@@ -33,8 +68,26 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }]
     },
+    {
+      name: 'isSpicy',
+      title: 'Spicy',
+      type: 'boolean'
+    },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number'
+    }
   ],
-  
+  orderings: [
+    {
+      title: 'Order Ascending',
+      name: 'orderAsc',
+      by: [
+        {field: 'order', direction: 'asc'}
+      ]
+    }
+  ],
   preview: {
     select: {
       title: 'name',
