@@ -13,6 +13,7 @@ exports.components = {
   "component---src-pages-blog-js": hot(preferDefault(require("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/blog.js"))),
   "component---src-pages-contact-js": hot(preferDefault(require("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/contact.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/index.js"))),
+  "component---src-pages-menu-js": hot(preferDefault(require("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/menu.js"))),
   "component---src-pages-projects-js": hot(preferDefault(require("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/projects.js")))
 }
 

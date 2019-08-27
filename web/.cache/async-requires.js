@@ -10,6 +10,7 @@ exports.components = {
   "component---src-pages-blog-js": () => import("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/blog.js" /* webpackChunkName: "component---src-pages-blog-js" */),
   "component---src-pages-contact-js": () => import("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/contact.js" /* webpackChunkName: "component---src-pages-contact-js" */),
   "component---src-pages-index-js": () => import("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
+  "component---src-pages-menu-js": () => import("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/menu.js" /* webpackChunkName: "component---src-pages-menu-js" */),
   "component---src-pages-projects-js": () => import("/Users/katie/Documents/GitHub/gatsbysanity/web/src/pages/projects.js" /* webpackChunkName: "component---src-pages-projects-js" */)
 }
 
