@@ -40,19 +40,7 @@ export default {
         {
           name: 'price',
           title: 'Price',
-          type: 'object',
-          fields: [
-            {
-              name: 'priceLabel',
-              title: 'Label',
-              type: 'string'
-            },
-            {
-              name: 'thePrice',
-              label: 'Price',
-              type: 'number'
-            }
-          ],
+          type: 'price',
           preview: {
             select: {
               title: 'thePrice',

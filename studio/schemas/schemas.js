@@ -21,6 +21,7 @@ import siteSettings from './siteSettings'
 import slideshow from './slideshow'
 import menuItem from './menuItem'
 import jobListing from './jobListing'
+import price from './price'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,7 +47,8 @@ export default createSchema({
     siteSettings,
     slideshow,
     menuItem,
-    jobListing
+    jobListing,
+    price
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

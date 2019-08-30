@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
 
-const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings', 'menuItem']
+const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'price', 'project', 'siteSettings', 'menuItem']
 
 export default () =>
   S.list()
